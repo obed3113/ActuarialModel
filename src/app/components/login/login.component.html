@@ -1,0 +1,16 @@
+User Login Form:
+<form [formGroup]="form">
+
+  <input matInput type="email" name="email" placeholder="Email" formControlName="email" />
+
+  <input matInput type="password" placeholder="Password" formControlName="password" />
+  <div class="field-message" *ngIf="password.errors?.['passwordStrength']">
+    Your password must have lower case, upper case and numeric characters.
+</div>
+<div class="field-message" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+  hello, this is shown bc it is a wrong email
+</div>
+  <button [disabled]="!form.valid">
+    Login
+  </button>
+</form>
