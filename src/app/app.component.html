@@ -1,16 +1,8 @@
-<!-- this is the layout, feel free to add as many components as needed -->
-<!-- <header class="fixed w-full h-12">
-  
-</header> -->
+
 <div id="CalcLayout" class="relative h-screen p-2 gap-2">
   <app-nav class="[grid-area:banner]"></app-nav>
-  <div class="[grid-area:aside] flex-col flex overflow-y-auto">
-    <!-- here will be an <AsideMenuComponent /> -->
-    aside
-  </div>
-  <div class="[grid-area:main] rounded-lg bg-zinc-400 overflow-y-auto" >
-    MAIN
-  </div>
+  <app-aside-menu class="[grid-area:aside] flex-col flex overflow-y-auto"></app-aside-menu>
+  <app-calculation class="[grid-area:main] rounded-lg overflow-y-auto" ></app-calculation>
 </div>
 
 <router-outlet></router-outlet>

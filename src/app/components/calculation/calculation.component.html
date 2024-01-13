@@ -1,1 +1,16 @@
-<p>calculation works!</p>
+<div class="p-2 text-justify">
+  <form>
+  <label for="mainLimit">Main Limit:</label><br/>
+  <input id="mainLimit" type="text" digitOnly [formControl]="mainLimit" [value]="mainLimit.value | currency:'':'symbol':'1.0-0'" class="p-1 border-2 rounded border-blue-600 text-right"/> <br/>
+  <label for="mainRetention">Main Retention:</label><br/>
+  <input id="mainRetention" type="text" digitOnly [formControl]="mainRetention" [value]="mainRetention.value | currency:'':'symbol':'1.0-0'" class="p-1 border-2 rounded border-blue-600 text-right"/> <br/>
+  <label for="executionType">Choose Execution Type:</label><br/>
+  <select id="executionType" [formControl]="executionType" name="executionType" class="p-1 border-2 rounded border-blue-600">
+    <option value="Simple">Simple</option>
+    <option value="Complex">Complex</option>
+</select>
+<br/>
+<button type="submit" class="my-8 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Calculate</button>
+</form>
+
+</div>
