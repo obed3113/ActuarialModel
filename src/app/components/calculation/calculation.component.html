@@ -1,4 +1,4 @@
-<div class="p-2 text-justify">
+<div class="text-justify">
   <form [formGroup]="form">
     <label for="mainLimit">Main Limit:</label><br />
     <div class="field-message text-red-500" *ngIf="form.get('mainLimit')?.invalid && form.get('mainLimit')?.touched">
@@ -6,33 +6,33 @@
     </div>
     <input id="mainLimit" type="text" digitOnly formControlName="mainLimit"
       [value]="form.get('mainLimit')?.value | currency:'GBP':'symbol':'1.0-0'"
-      class="p-1 border-2 rounded border-blue-600 text-right"  autocomplete="false"/> <br />
+      class="p-1 border-2 rounded border-blue-600 text-right dark:bg-gray-900 dark:text-white"  autocomplete="false"/> <br />
     <label for="mainRetention">Main Retention:</label><br />
     <div class="field-message text-red-500" *ngIf="form.get('mainRetention')?.invalid && form.get('email')?.touched">
       main Retention value not valid
     </div>
     <input id="mainRetention" type="text" digitOnly formControlName="mainRetention"
       [value]="form.get('mainRetention')?.value | currency:'GBP':'symbol':'1.0-0'"
-      class="p-1 border-2 rounded border-blue-600 text-right"  autocomplete="false"/> <br />
+      class="p-1 border-2 rounded border-blue-600 text-right dark:bg-gray-900 dark:text-white"  autocomplete="false"/> <br />
     <label for="executionType">Choose Execution Type:</label><br />
     <select id="executionType" formControlName="executionType" name="executionType"
-      class="p-1 border-2 rounded border-blue-600"  autocomplete="false">
+      class="p-1 border-2 rounded border-blue-600 dark:bg-gray-900 dark:text-white"  autocomplete="false">
       <option value="Simple">Simple</option>
       <option value="Complex">Complex</option>
     </select>
     <br />
     <button type="submit" [disabled]="!form.valid" [ngClass]="{
           'bg-gray-700':!form.valid,
-          'dark:bg-gray-600,':!form.valid,
-          'dark:focus:ring-gray-800,':!form.valid,
-          'dark:hover:bg-gray-700,':!form.valid,
+          'dark:bg-red-600,':!form.valid,
+          'dark:focus:ring-red-800,':!form.valid,
+          'dark:hover:bg-red-700,':!form.valid,
           'focus:ring-gray-300,':!form.valid,
           'hover:bg-gray-800,':!form.valid,
           'text-gray-500':!form.valid,
           'bg-purple-700':form.valid,
-          'dark:bg-purple-600,':form.valid,
-          'dark:focus:ring-purple-800,':form.valid,
-          'dark:hover:bg-purple-700,':form.valid,
+          'dark:bg-blue-600,':form.valid,
+          'dark:focus:ring-blue-800,':form.valid,
+          'dark:hover:bg-blue-700,':form.valid,
           'focus:ring-purple-300,':form.valid,
           'hover:bg-purple-800,':form.valid,
           'text-white':form.valid
