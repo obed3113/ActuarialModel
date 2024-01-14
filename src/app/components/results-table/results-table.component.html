@@ -1,4 +1,6 @@
 
+<div *ngIf="loading" class="spinner">
+  </div>
 <div *ngIf="resultsData">
 <h1 class="self-center text-xl font-semibold whitespace-nowrap dark:text-white p-4">Calculation Results</h1>
     <table class="min-w-full text-center text-sm font-light px-4 rounded-lg">
@@ -17,5 +19,5 @@
     </table>
 </div>
 <div>
-    <h1 *ngIf="!resultsData">No hay datos cargados</h1>
+    <h1 *ngIf="!resultsData && !loading">Ready to Calculate</h1>
 </div>

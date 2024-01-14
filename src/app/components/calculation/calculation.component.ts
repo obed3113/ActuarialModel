@@ -50,6 +50,7 @@ export class CalculationComponent {
   onCalculateClick() {
     // Mostrar el spinner
     this.showSpinner = true;
+    this.sharedDataService.startLoading();
 
     // Esperar 3 segundos, despues ocultar el spinner y 
     //llenar la dummy data simulando obtenerla de un http, 

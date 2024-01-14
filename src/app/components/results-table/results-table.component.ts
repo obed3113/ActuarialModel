@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ResultsTableComponent implements OnInit{
   resultsData: any;
-  columns: any;
+  loading:any;
   constructor(private sharedDataService: SharedDataService) {
 
   }
@@ -20,6 +20,10 @@ export class ResultsTableComponent implements OnInit{
     // Suscribirse a los cambios en los datos compartidos del shared-data service
     this.sharedDataService.resultsData$.subscribe((data) => {
       this.resultsData = data;
+    });
+
+    this.sharedDataService.loading$.subscribe((loading) => {
+      this.loading = loading;
     });
   }
 }
