@@ -1,22 +1,22 @@
 <div class="p-2 text-justify">
   <form [formGroup]="form">
     <label for="mainLimit">Main Limit:</label><br />
-    <div class="field-message" *ngIf="form.get('mainLimit')?.invalid && form.get('mainLimit')?.touched">
+    <div class="field-message text-red-500" *ngIf="form.get('mainLimit')?.invalid && form.get('mainLimit')?.touched">
       entered value is not valid
     </div>
     <input id="mainLimit" type="text" digitOnly formControlName="mainLimit"
       [value]="form.get('mainLimit')?.value | currency:'GBP':'symbol':'1.0-0'"
-      class="p-1 border-2 rounded border-blue-600 text-right" /> <br />
+      class="p-1 border-2 rounded border-blue-600 text-right"  autocomplete="false"/> <br />
     <label for="mainRetention">Main Retention:</label><br />
-    <div class="field-message" *ngIf="form.get('mainRetention')?.invalid && form.get('email')?.touched">
+    <div class="field-message text-red-500" *ngIf="form.get('mainRetention')?.invalid && form.get('email')?.touched">
       main Retention value not valid
     </div>
     <input id="mainRetention" type="text" digitOnly formControlName="mainRetention"
       [value]="form.get('mainRetention')?.value | currency:'GBP':'symbol':'1.0-0'"
-      class="p-1 border-2 rounded border-blue-600 text-right" /> <br />
+      class="p-1 border-2 rounded border-blue-600 text-right"  autocomplete="false"/> <br />
     <label for="executionType">Choose Execution Type:</label><br />
     <select id="executionType" formControlName="executionType" name="executionType"
-      class="p-1 border-2 rounded border-blue-600">
+      class="p-1 border-2 rounded border-blue-600"  autocomplete="false">
       <option value="Simple">Simple</option>
       <option value="Complex">Complex</option>
     </select>
@@ -37,8 +37,10 @@
           'hover:bg-purple-800,':form.valid,
           'text-white':form.valid
         }"
-      class="focus:outline-none focus:ring-4 font-medium lg:mr-2 lg:px-5 lg:py-2.5 my-8 px-4 py-2 rounded-lg sm:mr-2 text-sm">
-      Calculate
+      class="focus:outline-none focus:ring-4 font-medium lg:mr-2 lg:px-5 lg:py-2.5 my-8 px-4 py-2 rounded-lg sm:mr-2 text-sm"
+      (click)="onCalculateClick()">
+      <span *ngIf="!showSpinner">Calculate</span>
+  <div *ngIf="showSpinner" class="spinner"></div>
     </button>
   </form>
 

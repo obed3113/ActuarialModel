@@ -1,0 +1,21 @@
+
+<div *ngIf="resultsData">
+<h1>Calculation Results</h1>
+    <table class="min-w-full text-center text-sm font-light px-4 rounded-lg">
+        <thead class="border-b font-medium dark:border-neutral-500">
+            <th class="p-3">Date</th>
+            <th class="p-3">Benchmark1</th>
+            <th class="p-3">Benchmark2</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let datum of resultsData" class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                <td class="whitespace-nowrap p-3">{{datum.date| date:"dd MMM yyyy"}}</td>
+                <td class="whitespace-nowrap p-3">{{datum.Benchmark1}} %</td>
+                <td class="whitespace-nowrap p-3">{{datum.Benchmark2}} %</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <h1 *ngIf="!resultsData">No hay datos cargados</h1>
+</div>
