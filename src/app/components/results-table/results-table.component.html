@@ -1,6 +1,13 @@
-
-<div *ngIf="loading" class="spinner">
-  </div>
+<div *ngIf="loading" class="flex items-center justify-center h-full w-full">
+<div 
+  class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent motion-reduce:animate-[spin_1.5s_linear_infinite]"
+  role="status">
+  <span
+    class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+    >Loading...</span
+  >
+</div>
+</div>
 <div *ngIf="resultsData">
 <h1 class="self-center text-xl font-semibold whitespace-nowrap dark:text-white p-4">Calculation Results</h1>
     <table class="min-w-full text-center text-sm font-light px-4 rounded-lg">
