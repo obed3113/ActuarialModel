@@ -17,14 +17,14 @@ export class CalculationComponent {
     mainLimit: ['', {
       validators: [
         Validators.required,
-        Validators.min(0)
+        Validators.min(1)
       ],
       updateOn: 'blur'
     }],
     mainRetention: ['', {
       validators: [
         Validators.required,
-        Validators.min(0)
+        Validators.min(1)
       ], 
       updateOn: 'blur' }
     ],
